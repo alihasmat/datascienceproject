@@ -2,6 +2,7 @@ from src.datascience.constants import *
 from src.datascience.utils.common import read_yaml, create_directories
 from src.datascience.entity.config_entity import DataIngestionconfig
 from src.datascience.entity.config_entity import DataValidationConfig
+from src.datascience.entity.config_entity import DataTransformationConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -40,3 +41,12 @@ class ConfigurationManager:
             all_schema = schema
         )
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+        data_transforamtion_config = DataTransformationConfig(
+            root_dir = config.root_dir,
+            data_path = config.data_path
+        )
+        return data_transforamtion_config

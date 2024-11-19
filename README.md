@@ -4,7 +4,7 @@
 
 1. Data Ingestion
 2. Data Validation
-3. Data Transformation
+3. Data Transformation -- Feature Engineering, Data Preprocessing
 4. Module Trainer
 5. Module Evaluation
 
