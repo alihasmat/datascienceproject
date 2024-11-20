@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hasmatali/Desktop/MLOps/datascienceproject/mlruns/0/122c2f34be964797881e2cdedfda69be/artifacts
+end_time: 1732118629102
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 122c2f34be964797881e2cdedfda69be
+run_name: lyrical-hen-547
+run_uuid: 122c2f34be964797881e2cdedfda69be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732118626859
+status: 4
+tags: []
+user_id: hasmatali

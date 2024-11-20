@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/hasmatali/Desktop/MLOps/datascienceproject/mlruns/0/2d85324d57574a68aa7e5c773d888cbd/artifacts
+end_time: 1732115439320
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2d85324d57574a68aa7e5c773d888cbd
+run_name: amusing-stork-639
+run_uuid: 2d85324d57574a68aa7e5c773d888cbd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732115437065
+status: 4
+tags: []
+user_id: hasmatali

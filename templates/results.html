@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Quality Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .result-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .quality-score {
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 20px;
+        }
+        .quality-rating {
+            text-align: center;
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .details-container {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .detail-label {
+            color: #555;
+            font-weight: bold;
+        }
+        .detail-value {
+            color: #333;
+        }
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Wine Quality Assessment</h1>
+        <div id="qualityScore" class="quality-score">{{prediction}}</div>
+        <div id="qualityRating" class="quality-rating"></div>
+        <div class="details-container" id="inputDetails"></div>
+        <a href="#" class="back-btn" onclick="goBack()">Back to Assessment</a>
+    </div>
+
+    <script>
+        function getQualityRating(score) {
+            if (score <= 3) return "Poor Quality Wine";
+            if (score > 3 && score <= 5) return "Below Average Wine";
+            if (score > 5 && score <= 7) return "Good Quality Wine";
+            return "Excellent Quality Wine";
+        }
+    
+        function displayResults() {
+            // Get the quality score as text
+            const scoreText = document.getElementById('qualityScore').textContent;
+    
+            // Check if the score is in square brackets
+            let scoreNum;
+            if (scoreText.startsWith('[') && scoreText.endsWith(']')) {
+                // Parse the score from the brackets
+                const scoreArray = JSON.parse(scoreText); // Convert to an array
+                scoreNum = scoreArray[0]; // Extract the first number
+                console.log(scoreNum);
+            } else {
+                // Fallback: Parse directly as a number
+                scoreNum = parseFloat(scoreText);
+            }
+    
+            // Display quality rating based on the parsed score
+            document.getElementById('qualityRating').textContent = getQualityRating(scoreNum);
+        }
+    
+        function goBack() {
+            window.location.href = '/';
+        }
+    
+        // Call displayResults when the page loads
+        displayResults();
+    </script>
+</body>
+</html>
