@@ -6,7 +6,7 @@
 2. Data Validation
 3. Data Transformation -- Feature Engineering, Data Preprocessing
 4. Module Trainer
-5. Module Evaluation
+5. Module Evaluation - MLFLOW, DAGSHUB
 
 ## Workflows
 ### First three steps we follow in every pipeline we are building
